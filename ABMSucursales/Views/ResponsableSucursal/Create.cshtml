@@ -1,0 +1,69 @@
+﻿@model ABMSucursales.Models.ResponsableSucursal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Responsable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdResponsable" class="control-label">Número de Legajo</label>
+                <input asp-for="IdResponsable" class="form-control" />
+                <span asp-validation-for="IdResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreResponsable" class="control-label">Nombre</label>
+                <input asp-for="NombreResponsable" class="form-control" />
+                <span asp-validation-for="NombreResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoResponsable" class="control-label">Apellido</label>
+                <input asp-for="ApellidoResponsable" class="form-control" />
+                <span asp-validation-for="ApellidoResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoResponsable" class="control-label">Cargo</label>
+                <input asp-for="CargoResponsable" class="form-control" />
+                <span asp-validation-for="CargoResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailResponsable" class="control-label">Correo</label>
+                <input asp-for="EmailResponsable" class="form-control" />
+                <span asp-validation-for="EmailResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoResponsable" class="control-label">Teléfono</label>
+                <input asp-for="TelefonoResponsable" class="form-control" />
+                <span asp-validation-for="TelefonoResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioAtencionApertura" class="control-label">Horario de apertura</label>
+                <input asp-for="HorarioAtencionApertura" class="form-control" />
+                <span asp-validation-for="HorarioAtencionApertura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioAtencionClausura" class="control-label">Horario de clausura</label>
+                <input asp-for="HorarioAtencionClausura" class="form-control" />
+                <span asp-validation-for="HorarioAtencionClausura" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

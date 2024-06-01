@@ -1,0 +1,83 @@
+﻿@model ABMSucursales.Models.Sucursal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sucursal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdSucursal" class="control-label">Id Sucursal</label>
+                <input asp-for="IdSucursal" class="form-control" />
+                <span asp-validation-for="IdSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreSucursal" class="control-label">Nombre de sucursal</label>
+                <input asp-for="NombreSucursal" class="form-control" />
+                <span asp-validation-for="NombreSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DireccionSucursal" class="control-label">Dirección</label>
+                <input asp-for="DireccionSucursal" class="form-control" />
+                <span asp-validation-for="DireccionSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoSucursal" class="control-label">Teléfono</label>
+                <input asp-for="TelefonoSucursal" class="form-control" />
+                <span asp-validation-for="TelefonoSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailSucursal" class="control-label">Correo:</label>
+                <input asp-for="EmailSucursal" class="form-control" />
+                <span asp-validation-for="EmailSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AreaSucursal" class="control-label">Área</label>
+                <input asp-for="AreaSucursal" class="form-control" />
+                <span asp-validation-for="AreaSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroEmpleadosSucursal" class="control-label">Número de empleados</label>
+                <input asp-for="NumeroEmpleadosSucursal" class="form-control" />
+                <span asp-validation-for="NumeroEmpleadosSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioAtencionApertura" class="control-label">Horario de apertura</label>
+                <input asp-for="HorarioAtencionApertura" class="form-control" />
+                <span asp-validation-for="HorarioAtencionApertura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioAtencionClausura" class="control-label">Horario de clausura</label>
+                <input asp-for="HorarioAtencionClausura" class="form-control" />
+                <span asp-validation-for="HorarioAtencionClausura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observaciones" class="control-label"></label>
+                <input asp-for="Observaciones" class="form-control" />
+                <span asp-validation-for="Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdResponsable" class="control-label">Legajo del responsable</label>
+                <select asp-for="IdResponsable" class ="form-control" asp-items="ViewBag.IdResponsable"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

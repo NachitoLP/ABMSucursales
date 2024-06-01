@@ -1,0 +1,78 @@
+﻿@model ABMSucursales.Models.Sucursal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sucursal</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre de sucursal:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreSucursal)
+        </dd>
+        <dt class = "col-sm-2">
+            Dirección:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DireccionSucursal)
+        </dd>
+        <dt class = "col-sm-2">
+            Teléfono:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelefonoSucursal)
+        </dd>
+        <dt class = "col-sm-2">
+            Correo:
+        </dt>
+        <dd class = "col-sm-10">
+            <a href="mailto:@Model.EmailSucursal">@Html.DisplayFor(model => model.EmailSucursal)</a>
+        </dd>
+        <dt class = "col-sm-2">
+            Área:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AreaSucursal)
+        </dd>
+        <dt class = "col-sm-2">
+            Número de empleados:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeroEmpleadosSucursal)
+        </dd>
+        <dt class = "col-sm-2">
+            Horario de apertura:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HorarioAtencionApertura)
+        </dd>
+        <dt class = "col-sm-2">
+            Horario de clausura:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HorarioAtencionClausura)
+        </dd>
+        <dt class = "col-sm-2">
+            Observaciones:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+        <dt class = "col-sm-2">
+            Legajo del responsable:
+        </dt>
+        <dd class = "col-sm-10">
+            <a asp-controller="ResponsableSucursal" asp-action="Details" asp-route-id="@Model.IdResponsable">@Html.DisplayFor(model => model.IdResponsable)</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdSucursal">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ABMSucursales.Models.Sucursal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sucursales</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre de sucursal
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Área
+            </th>
+            <th>
+                Legajo del responsable
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreSucursal)
+            </td>
+            <td>
+                <a href="mailto:@item.EmailSucursal">@Html.DisplayFor(modelItem => item.EmailSucursal)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaSucursal)
+            </td>
+            <td>
+                <a asp-controller="ResponsableSucursal" asp-action="Details" asp-route-id="@item.IdResponsable">@Html.DisplayFor(modelItem => item.IdResponsable)</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSucursal">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdSucursal">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSucursal">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
